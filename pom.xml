@@ -21,7 +21,7 @@
 
     <properties>
         <java.version>21</java.version>
-        <spring-boot.version>2.7.2</spring-boot.version>
+        <spring-boot.version>3.2.0</spring-boot.version>
         <druid.version>1.1.10</druid.version>
     </properties>
 
