@@ -15,22 +15,17 @@ util 工具类（id生成工具、分页工具）。
 2)lombok 通过注解自动生成常见的样板代码（如getter/setter、构造函数等），显著提升开发效率和代码简洁性。
 3) junit 单元测试工具。
 4) caffeine 高性能本地缓存库。
-5) spring-boot-maven-plugin打包插件。
-6）jib-maven-plugin 快速构建docker镜像插件。
-7)maven-surefire-plugin 测试运行器(Test Runner)，它能兼容JUnit3、JUnit4。
+5) spring-boot-maven-plugin打包插件。 6）dockerfile-maven-plugin 快速构建docker镜像插件。 7)maven-surefire-plugin 测试运行器(Test Runner)
+   ，它能兼容JUnit3、JUnit4。
 
-3、实现接口 
-1）交易信息新增、修改、删除、分页查询列表等接口。
+3、实现接口 1）交易信息新增、修改、删除、分页查询列表等接口。
 2）本地缓存caffeine最大存储条目数配置项service.cache.caffeine.maximumSize，存储时间单位分钟配置项service.cache.caffeine.expireAfterWrite。
 
-4、打包说明 
-1)mvn clean package 自动打包生成 bank-transaction-service-0.0.1.jar，运行jdk 21。
-2)mvn clean jib:buildTar，生成镜像，由于本地环境和权限的问题没有生成成功。
+4、打包说明 1)mvn clean package 自动打包生成 bank-transaction-service-0.0.1.jar，运行jdk 21。 2)mvn dockerfile:build，生成镜像。
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
 
-5、测试
-1）单元测试 mvn test 自动运行单元测试。 
-运行结果：
-Results :
+5、测试 1）单元测试 mvn test 自动运行单元测试。 运行结果： Results :
 Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
 
 2)JMeter性能测试

@@ -1,5 +1,5 @@
 # 使用官方的 Java 21 镜像作为基础镜像
-FROM FROM openjdk:21
+FROM openjdk:21
 
 # 设置工作目录
 WORKDIR /app
