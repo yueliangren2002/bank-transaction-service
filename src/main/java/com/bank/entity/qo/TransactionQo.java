@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.util.Date;
 
-// 交易请求实体
+// 交易请求实体，不带参数校验
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

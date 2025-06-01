@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-// 交易请求实体
+// 交易列表请求实体
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

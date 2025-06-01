@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.util.Date;
 
-// 交易请求实体
+// 交易修改实体
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
