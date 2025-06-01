@@ -1,0 +1,27 @@
+# Spring配置
+spring:
+  application:
+    name: bank-transaction-service
+
+
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8088
+  servlet:
+    # 应用的访问路径
+    context-path: /
+
+  #设定Caffeine的各项参数，如最大存储元素数量、过期时间
+service:
+  cache:
+    caffeine:
+      maximumSize: 100000
+      expireAfterWrite: 50
+
+#禁用Actuator 端点http公开
+management:
+  endpoint:
+    env:
+      enabled: false
+  server:
+    port: -1
