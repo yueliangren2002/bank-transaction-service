@@ -22,9 +22,8 @@ util 工具类（id生成工具、分页工具）。
 3、实现接口 1）交易信息新增、修改、删除、分页查询列表等接口。
 2）本地缓存caffeine最大存储条目数配置项service.cache.caffeine.maximumSize，存储时间单位分钟配置项service.cache.caffeine.expireAfterWrite。
 
-4、打包说明 
-1)mvn clean package 自动打包生成 bank-transaction-service-0.0.1.jar，运行jdk 21。
-2)mvn dockerfile:build，生成镜像。
+4、打包说明 1)mvn clean package 自动打包生成 bank-transaction-service-0.0.1.jar，程序编译和运行jdk版本为jdk21。 2)mvn dockerfile:
+build，生成镜像文件,注:需要改pom.xml,把dockerfile-maven-plugin前后注释去掉。
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
 
