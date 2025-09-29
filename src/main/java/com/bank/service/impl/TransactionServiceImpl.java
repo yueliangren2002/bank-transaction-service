@@ -10,6 +10,7 @@ import com.bank.service.CaffinService;
 import com.bank.service.TransactionService;
 import com.bank.util.IdGenerator;
 import com.bank.util.PageUtils;
+import com.bank.util.SnowflakeIdGenerator;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -27,16 +28,19 @@ public class TransactionServiceImpl implements TransactionService {
     @Resource
     private CaffinService caffinService;
 
+    @Resource
+    private SnowflakeIdGenerator snowflakeIdGenerator;
+
 
     @Override
     public int addTransaction(TransactionAddQo transactionAddQo) throws BusinessException {
         //生成交易id
         if (Objects.isNull(transactionAddQo.getId())) {
-            transactionAddQo.setId(IdGenerator.generateUniqueId());
+            transactionAddQo.setId(snowflakeIdGenerator.nextId());
         }
         //判断是否重复添加
         if (Objects.nonNull(queryTransactionById(transactionAddQo.getId()))) {
-            log.error("Add transaction repeatedly!");
+            log.error("Add transaction repeatedly!id:{}.",transactionAddQo.getId());
             throw new BusinessException("Add transaction repeatedly!");
         }
 
