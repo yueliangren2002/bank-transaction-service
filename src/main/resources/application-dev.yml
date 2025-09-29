@@ -17,6 +17,11 @@ service:
     caffeine:
       maximumSize: 100000
       expireAfterWrite: 50
+  # 雪花算法id生成器,workId机房id（0~31)，datacenterId数据中心id（0~31)
+  snowflakeIdWorker:
+    workerId: 1
+    datacenterId: 1
+
 
 #禁用Actuator 端点http公开
 management:
